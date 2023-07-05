@@ -7,7 +7,10 @@ Header section styling
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     box-sizing: border-box;
 }
-
+html{
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
 body {
     height: 100vh;
 }
@@ -28,27 +31,31 @@ a {
 
 .navbar {
     display: flex;
-    position: fixed;
+    position: fixed ;
     justify-content: space-between;
-    width: 100%;
-    height: 50px;
-    max-width: 1500px;
+ width: 100%;
+ left: 0;
+ right: 0;
+ top: 0!important;
+ z-index: 100000;
+    height: 80px;
+    /* max-width: 1500px; */
     padding: 20px;
     /* background-color: #3f87a6; */
     /* margin: 0 auto; */
 
 }
 
-.navbar.scrolled {
+.navbar.sticky {
     background-color: white;
     /* position: relative; */
 }
 
 .logo h1 {
-    color: purple;
+    color: rgba(45, 10, 190, 1);
     font-weight: bolder;
-    margin-left: -20px;
-    font-size: 40px;
+    margin-left: -10px;
+    font-size: 30px;
 }
 
 .navbar .links {
@@ -65,11 +72,12 @@ a:hover {
     display: none;
     font-size: 1.5rem;
     cursor: pointer;
+    
     /* color: white; */
 }
 
 .button {
-    background-color: purple;
+    background-color: rgba(45, 10, 190, 1);
     color: white;
     border-radius: 20px;
     width: 150px;
@@ -108,7 +116,14 @@ a:hover {
     height: 0;
     display: none;
 }
-
+.dropdown-menu li a:hover{
+    color:#f69d3c;
+    background-color: #a3abaf;
+    border-radius: 20px;
+    padding: 2px 0px;
+    text-align: center;
+    width: 100%;
+}
 .dropdown-menu li {
     display: flex;
     justify-content: center;
@@ -180,7 +195,9 @@ a:hover {
 header {
     display: flex;
     justify-content: space-around;
-    background: linear-gradient(0.25turn, #3f87a6, #ebf8e1, #f69d3c);
+    /* background: linear-gradient(0.25turn, #3f87a6, #ebf8e1, #f69d3c); */
+    background: linear-gradient(103.44deg, #74EFE3 -6.83%, #E6D4FF 106.37%);
+
     border-radius: 50px;
     margin: 90px 40px;
     /* position: fixed; */
@@ -192,25 +209,25 @@ header img {
 }
 
 .left {
-    width: 500px;
+    width: 356px;
     margin-top: 15vh;
-    -items: center;
+   
 }
 
 .left h1 {
     line-height: 70px;
-    font-size: 5rem;
-    color: purple;
+    font-size: 4rem;
+    color: rgba(45, 10, 190, 1);
 }
 
 .left p {
-    font-size: 14px;
-
+    font-size: 18px;
+font-weight: 600;
     margin-top: 20px;
 }
 
 .left button {
-    background-color: purple;
+    background-color: rgba(45, 10, 190, 1);
     color: white;
     border: transparent;
     padding: 10px 30px;
@@ -221,7 +238,7 @@ header img {
 
 @media screen and (max-width:992px) {
     .left {
-        width: 300px;
+        width: 216px;
         margin-top: 20px;
     }
 
@@ -237,7 +254,7 @@ header img {
 
 @media screen and (max-width:764px) {
     header {
-        display: block;
+        display: inline-block;
 
     }
 
@@ -270,7 +287,7 @@ header img {
         top: 30px;
         /* position:sticky; */
         border-radius: 30px;
-        margin: auto;
+        margin:60px 20px 0px 20px;
     }
 
     .left h1 {
@@ -299,7 +316,7 @@ header img {
     background-color: black;
     color: white;
     border-radius: 30px;
-    margin: 50px;
+    margin: 150px 50px 50px 50px;
     height: 350px;
     padding: 50px;
     /* position: relative; */
@@ -311,29 +328,36 @@ header img {
 }
 
 .top p {
-    width: 400px;
+    width: 500px;
     margin-top: 10px;
     line-height: 30px;
+
 }
 
 .box1 {
     background-color: white;
     border-radius: 10px;
     width: 300px;
+    cursor: pointer;
     color: black;
     height: 250px;
-    padding: 30px;
-    /* margin-left: 30px; */
+    padding: 30px ;
+    transition: transform 1s; /* Add transition property */
+    margin-left: 30px;
     margin-top: 30px;
-    box-shadow: 5px 15px 15px rgb(112, 112, 112);
-}
+    box-shadow: 5px 5px 20px rgb(112, 112, 112);
 
+}
+.box1:hover{
+    transform: scale(1.05);
+
+}
 .box1 h1 {
     font-size: 25px;
 }
 
 .box1 p {
-    width: 265px;
+    width: 220px;
     font-size: 15px;
     line-height: 20px;
 }
@@ -348,7 +372,10 @@ header img {
     justify-content: center;
 
 }
+.icon{
+    color: rgba(45, 10, 190, 1);
 
+}
 
 /* ===========================
 features styling responsive
@@ -393,6 +420,8 @@ features styling responsive
 
     .box1 .icon {
         font-size: 20px;
+    color: rgba(45, 10, 190, 1);
+    
     }
 }
 
@@ -473,12 +502,12 @@ features styling responsive
     /* grid-template-columns: auto auto; */
     justify-content: center;
     gap: 50px;
-    margin-top: 700px;
+    margin-top: 300px;
 
 }
 
 .right-img img {
-    width: 300px;
+    width: 200px;
     /* rotate: -10deg; */
     /* position: absolute; */
     /* z-index: 1; */
@@ -492,15 +521,19 @@ features styling responsive
 
 .left-text h1 {
     font-size: 40px;
-    color: purple;
+    color: rgba(45, 10, 190, 1);
     margin-bottom: 30px;
     margin-top: 10vh;
 }
-
+.left-text p{
+    /* width: 400px; */
+    font-weight: 600;
+    color: gray;
+}
 .left-text button {
     background-color: transparent;
     border: none;
-    color: purple;
+    color: rgba(45, 10, 190, 1);
     margin-top: 30px;
     font-size: 15px;
     font-weight: bold;
@@ -678,14 +711,19 @@ section 4
     width: 350px;
     color: black;
     height: 350px;
+    transition: transform 1s;
     /* padding: 30px; */
     margin-left: 30px;
     margin-top: 30px;
-    box-shadow: 5px 15px 15px rgb(112, 112, 112);
+    box-shadow: 5px 5px 20px rgb(112, 112, 112);
+    box-shadow:inset;
 }
-
+.box2:hover{
+    transform: scale(1.05);
+    cursor: pointer;
+}
 .box2 h1 {
-    color: purple;
+    color: rgba(45, 10, 190, 1);
     font-size: 20px;
     padding: 20px 20px 0px 20px;
 }
@@ -775,6 +813,7 @@ section 4
     .bottom {
         display: grid;
         grid-template-columns: auto;
+        justify-content: end;
     }
 
     .box2 {
@@ -833,7 +872,7 @@ footer {
     background-color: black;
     color: white;
     border-radius: 50px 50px 0px 0px;
-    margin-top: 800px;
+    margin-top: 357px;
     display: grid;
     grid-template-columns: auto auto auto auto;
     padding: 60px 120px;
@@ -879,7 +918,7 @@ footer {
 }
 
 .input button {
-    background-color: rgb(21, 21, 139);
+    background-color: rgba(45, 10, 190, 1);
     color: white;
     border-radius: 10px;
     margin-left: 50px;
@@ -901,12 +940,18 @@ footer {
     font-size: 25px;
 }
 
-.list1 li {
+.list1 li a {
     font-size: 17px;
-    margin-top: 15px;
+    /* margin-top: 15px; */
     color: gray;
+  
 }
-
+.list1 li{
+    margin-top: 15px;
+}
+.list1 li :hover{
+    color: #f69d3c;
+}
 .list2 h1 {
     color: white;
     font-size: 25px;
@@ -917,7 +962,14 @@ footer {
     margin-top: 15px;
     color: gray;
 }
-
+.list2 li:hover{
+    color: #f69d3c;
+    cursor: pointer;
+}
+.list3 li:hover{
+    color: #f69d3c;
+    cursor: pointer;
+}
 .list3 h1 {
     color: white;
     font-size: 25px;
@@ -936,7 +988,12 @@ footer {
     /* ;border-top: gray */
     padding: 30px;
 }
-
+.lastline a{
+    font-size: 20px;
+    color: white;
+    font-weight: bold;
+    margin-left: 5px;
+}
 @media screen and (max-width:1035px) {
     .list1 h1 {
         color: white;
@@ -990,7 +1047,7 @@ footer {
     }
 
     .input button {
-        background-color: rgb(21, 21, 139);
+        background-color: purple;
         color: white;
         border-radius: 10px;
         margin-left: 10px;
@@ -1043,6 +1100,6 @@ footer {
     .input button {
         padding: 0px 5px;
         font-size: 10px;
-        margin-left: 10px;
+        margin-left:28px;
     }
 }
